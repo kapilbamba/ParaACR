@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hidden-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.blueIcon-hover {
+  @apply group-hover:text-[#389fd7] transition duration-150 group-hover:duration-500;
+}
+.orangeIcon-hover {
+  @apply group-hover:text-[#fa896b] transition duration-150 group-hover:duration-500;
+}
+.custombtn:hover {/* No selection provided, adding a new utility class */
+.utility-class {
+  @apply transition duration-150 ease-in-out;
+}
+  background-color: #2175a3 !important;
+  transition: ease-in-out 0.5s;
+}
+
+.custombtn {
+  transition: ease-in-out 0.5s;
+}
+#graphCard .apexcharts-yaxis {
+  display: none;
+}
+
+.rbc-month-header {
+  background-color: #2175a3;
+  color: white;
+}
+
+.rbc-toolbar button {
+  color: #2a3647 !important;
+  border: 1px solid #e0e9f5 !important;
+  padding: 0.35rem 0.58rem !important;
+  font-size: 0.8rem !important;
+  background-color: #f2f5f9 !important;
+  font-weight: 500 !important;
+  
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+  font-weight: 600;
+  color: #002e6f;
+}
+.rbc-off-range-bg {
+  background: #f2f2f2;
+}
+.funnel-pipeline-chart-title {
+  font-size: 0.8rem !important;
+  font-weight: 600;
+}
+.funnel-pipeline-chart-value {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.MuiSlider-root {
+  padding: 5px 0px !important;
+}
+
+.active_link {
+  @apply rounded-full border-2 border-white bg-[#25345d] w-[42px] h-[42px]   text-white flex items-center justify-center -top-5  absolute;
+}
+.active_link_text {
+  @apply !mt-7 text-center;
+}
+
+.bottom_nav_link {
+  @apply rounded-full w-[40px] h-[30px] flex items-center justify-center;
+}
+.bottom_nav_link_text {
+  @apply mt-2 text-center;
+}
+.slick-prev {
+  left: 2% !important;
+  z-index: 99;
+}
+.slick-next {
+  right: 2% !important;
+}
+.slick-prev:before {
+  @apply !text-[#f2b12b];
+}
+
+.slick-next:before {
+  @apply !text-[#f2b12b];
+}
+
+.multiColorWave {
+  @apply before:absolute before:top-0 before:left-0 before:bg-[url('./assets/images/pattern/upper_wave.png')] before:w-full before:h-full before:bg-contain before:bg-no-repeat 
+  before:opacity-45 before:z-10 after:z-10   after:absolute after:bottom-0 after:left-0 after:bg-[url('./assets/images/pattern/bottom_wave.png')] after:w-full after:h-full after:bg-contain after:bg-no-repeat 
+   after:bg-bottom after:opacity-45;
+}
+
+
+
+
+.blueColorWave {
+  @apply before:absolute before:top-0 before:left-0 before:bg-[url('./assets/images/pattern/top_blue_wave.png')] before:w-full before:h-full before:bg-contain before:bg-no-repeat 
+  before:opacity-10 before:z-10 after:z-10   after:absolute after:-bottom-14 after:left-0 after:bg-[url('./assets/images/pattern/bottom_blue_wave.png')] after:w-full after:h-full after:bg-contain after:bg-no-repeat 
+   after:bg-bottom after:opacity-20;
+}
+
+.run_bg {
+  background-image: url(../src//assets/images/pattern/light_run.png);
+}
+
+header {
+  border-bottom: none !important;
+}
+
+.size_table thead tr th:first-child{
+  border-top-left-radius: 10px;
+}
+
+.size_table thead tr th:last-child{
+  border-top-right-radius: 10px;
+}
+
+.visa_avtar .MuiAvatar-root{
+  box-shadow: none !important;
+  border:1px solid #f1f1f1,
+}
