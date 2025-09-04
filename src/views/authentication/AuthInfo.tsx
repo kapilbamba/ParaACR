@@ -1,8 +1,8 @@
 import { Box, Typography, Button, Grid } from "@mui/material";
 import { useLocation, useNavigate } from "react-router";
-import Logo from "src/assets/images/logos/logo.svg";
+import Logo from "src/assets/images/logos/para-logo.png";
 import PageContainer from "src/components/common/components/PageContainer";
-import crmImage from "src/assets/images/logos/logo.svg";
+import crmImage from "src/assets/images/logos/para-logo.png";
 
 const AuthInfo = () => {
   const navigate = useNavigate();

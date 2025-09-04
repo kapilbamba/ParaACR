@@ -1,8 +1,8 @@
 import { Grid, Box, Typography } from "@mui/material";
 import AuthForgotPassword from "./AuthForgotPassword";
 import PageContainer from "src/components/common/components/PageContainer";
-import LoginBG from "src/assets/images/sapek-bg.jpg";
-import Logo from "src/assets/images/logos/sepak-logo.png";
+import LoginBG from "src/assets/images/login_ban.jpg";
+import Logo from "src/assets/images/logos/para-logo.png";
 
 const ForgotPassword = () => {
   return (

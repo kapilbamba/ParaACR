@@ -1,8 +1,8 @@
 import { Box, Typography, Grid } from "@mui/material";
-import Logo from "src/assets/images/logos/sepak-logo.png";
+import Logo from "src/assets/images/logos/para-logo.png";
 import PageContainer from "../../components/common/components/PageContainer";
 import AuthLogin from "./AuthLogin";
-import LoginBG from "../../assets/images/sapek-bg.jpg";
+import LoginBG from "../../assets/images/login_ban.jpg";
 
 const Login = () => {
   return (

@@ -26,6 +26,8 @@ import CustomCheckBox from "src/components/common/forms/input-elements/CustomChe
 import { RootState } from "src/store/Store";
 import { AgenciesAPI, IdentifyAPI } from "src/http/server-apis";
 import { Link } from "react-router-dom";
+import { BiHotel } from "react-icons/bi";
+import { IconBus, IconShieldCheck } from "@tabler/icons-react";
 
 export const zoneData = [
   { label: "1" },
@@ -49,7 +51,7 @@ export default function UserAgencyBasicForm(props: any) {
     image,
     setImage,
   } = props;
-  const { UserID } = useSelector((state: RootState) => state?.user);
+  const { UserID } = useSelector((state: any) => state?.user);
   const [data, setData] = useState<any>({});
   const [idData, setIdData] = useState([]);
 
@@ -189,7 +191,7 @@ export default function UserAgencyBasicForm(props: any) {
           );
         })}
 
-        <div className="col-span-2 flex gap-8">
+        <div className="col-span-2 flex flex-col gap-5">
           <div className="">
             <FormLabel id="demo-row-radio-buttons-group-label" sx={{
               color: theme.palette.grey[600],
@@ -212,7 +214,7 @@ export default function UserAgencyBasicForm(props: any) {
             >
               {[
                 {
-                  VenueName: "Patliputra Stadium",
+                  VenueName: "Jawaharlal Nehru Stadium",
                 },
               ]?.map((x: { VenueName: string }) => (
                 <FormControlLabel
@@ -255,6 +257,48 @@ export default function UserAgencyBasicForm(props: any) {
                     }}
                   /> : null
               ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col">
+            <FormLabel
+              id="demo-row-radio-buttons-group-label"
+              sx={{
+                color: theme.palette.grey[600],
+                fontSize: "12px",
+                paddingLeft: "10px",
+                marginBottom: "12px",
+                marginTop: "5px",
+              }}
+            >
+              Services
+            </FormLabel>
+            <div className="flex gap-5">
+              {[
+                { label: "ADM", key: "ADM" },
+                { label: "Flight", key: "Flight" },
+                { label: "SEC", key: "SEC" },
+                { label: "TPT", key: "TPT" },
+                { label: "Catering", key: "Catering" },
+              ].map((service) =>
+                +data?.[service.key] ? (
+                  <CustomCheckBox
+                    key={service.key}
+                    size="small"
+                    value={[service.key]}
+                    checked={values?.[service.key] == 1 ? true : false}
+                    label={service.label}
+                    disabled={!+data?.[service.key]}
+                    onChange={(e: { target: { checked: any } }) => {
+                      if (e.target.checked) {
+                        setFieldValue(service.key, "1");
+                      } else {
+                        setFieldValue(service.key, "0");
+                      }
+                    }}
+                  />
+                ) : null
+              )}
             </div>
           </div>
         </div>

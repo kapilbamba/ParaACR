@@ -84,6 +84,8 @@ const AgencyUserRegistration = () => {
 
   if (isLoading) return <Spinner />;
 
+  console.log("dataaaaaaa", dayjs(data?.TentativeDate).format("MMM DD, YYYY"));
+
 
   return (
     <PageContainer title={data?.CompanyName || ""}>

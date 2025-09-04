@@ -1,8 +1,8 @@
 import { Box, Typography, Button, useTheme, Grid } from "@mui/material";
 import { useLocation, useNavigate } from "react-router";
 import PageContainer from "src/components/common/components/PageContainer";
-import Logo from "../../assets/images/logos/sepak-logo.png";
-import LoginBG from "../../assets/images/sapek-bg.jpg";
+import Logo from "../../assets/images/logos/para-logo.png";
+import LoginBG from "../../assets/images/login_ban.jpg";
 
 
 const LoginFailed = () => {
