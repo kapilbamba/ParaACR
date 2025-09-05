@@ -103,7 +103,6 @@ const ParticipantAddEditDialog: React.FC<IParticipantAddEditDialogProps> = (
       ...values,
       Photo: photoRes?.data?.FileName || values?.Photo,
       SupportDocuments: supportDocumentsRes?.data?.FileName || values?.SupportDocuments,
-      Active:0,
     };
 
     try {
@@ -150,7 +149,6 @@ const ParticipantAddEditDialog: React.FC<IParticipantAddEditDialogProps> = (
           ...values,
           SupportDocuments: supportDocumentsRes?.data?.FileName || values?.SupportDocuments,
           Photo: photoRes?.data?.FileName || values?.Photo,
-          Active:0,
         },
       });
       if (data?.status === 200)
