@@ -2,7 +2,7 @@
 import { NumericFormat } from "react-number-format";
 import dayjs from "dayjs";
 import { Box, FormControlLabel, FormLabel, Radio, RadioGroup, Typography, useTheme } from "@mui/material";
-import { MdOutlineUploadFile } from "react-icons/md";
+import { MdOutlineFlight, MdOutlineStadium, MdOutlineUploadFile } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { useQuery } from "react-query";
 import { useState } from "react";
@@ -26,8 +26,9 @@ import CustomCheckBox from "src/components/common/forms/input-elements/CustomChe
 import { RootState } from "src/store/Store";
 import { AgenciesAPI, IdentifyAPI } from "src/http/server-apis";
 import { Link } from "react-router-dom";
-import { BiHotel } from "react-icons/bi";
+import { BiDish, BiHotel } from "react-icons/bi";
 import { IconBus, IconShieldCheck } from "@tabler/icons-react";
+import { CgGym } from "react-icons/cg";
 
 export const zoneData = [
   { label: "1" },
@@ -55,7 +56,8 @@ export default function UserAgencyBasicForm(props: any) {
   const [data, setData] = useState<any>({});
   const [idData, setIdData] = useState([]);
 
-  useQuery(["get-all-agensies", UserID], () => AgenciesAPI("get", { params: `${UserID}` }), {
+  useQuery(["get-all-agensies", UserID], 
+    () => AgenciesAPI("get", { params: `${UserID}` }), {
     refetchOnWindowFocus: false,
     onSuccess(data) {
       if (data?.status === 200) {
@@ -63,7 +65,9 @@ export default function UserAgencyBasicForm(props: any) {
       }
     },
   });
-  const { isLoading: photoIdLoading } = useQuery(["get-all-identity"], () => IdentifyAPI("get"), {
+  const { isLoading: photoIdLoading } = useQuery(
+    ["get-all-identity"], 
+    () => IdentifyAPI("get"), {
     refetchOnWindowFocus: false,
     onSuccess(data) {
       if (data?.status === 200) {
@@ -260,7 +264,7 @@ export default function UserAgencyBasicForm(props: any) {
             </div>
           </div>
 
-          <div className="flex flex-col">
+         <div className="flex flex-col mt-4">
             <FormLabel
               id="demo-row-radio-buttons-group-label"
               sx={{
@@ -273,30 +277,55 @@ export default function UserAgencyBasicForm(props: any) {
             >
               Services
             </FormLabel>
-            <div className="flex gap-5">
+            <div className="flex gap-5 flex-wrap">
               {[
-                { label: "ADM", key: "ADM" },
-                { label: "Flight", key: "Flight" },
-                { label: "SEC", key: "SEC" },
-                { label: "TPT", key: "TPT" },
-                { label: "Catering", key: "Catering" },
+                { label: "ADM", key: "ADM", 
+                  // icon: <BiHotel size={20} /> 
+                },
+                {
+                  label: "Flight",
+                  key: "Flight",
+                  // icon: <MdOutlineFlight size={20} />,
+                },
+                {
+                  label: "SEC",
+                  key: "SEC",
+                  // icon: <IconShieldCheck size={20} />,
+                },
+                { label: "TPT", key: "TPT", 
+                  // icon: <IconBus size={20} /> 
+                },
+                {
+                  label: "Catering",
+                  key: "Catering",
+                  // icon: <BiDish size={20} />,
+                },
+                {
+                  label: "STA",
+                  key: "STA",
+                  // icon: <MdOutlineStadium size={20} />,
+                },
+                { label: "TRN", key: "TRN", 
+                  // icon: <CgGym size={20} /> 
+                },
               ].map((service) =>
                 +data?.[service.key] ? (
-                  <CustomCheckBox
-                    key={service.key}
-                    size="small"
-                    value={[service.key]}
-                    checked={values?.[service.key] == 1 ? true : false}
-                    label={service.label}
-                    disabled={!+data?.[service.key]}
-                    onChange={(e: { target: { checked: any } }) => {
-                      if (e.target.checked) {
-                        setFieldValue(service.key, "1");
-                      } else {
-                        setFieldValue(service.key, "0");
-                      }
-                    }}
-                  />
+                  <div key={service.key} className="flex items-center gap-2">
+                    <CustomCheckBox
+                      size="small"
+                      value={service.key}
+                      checked={values?.[service.key] == 1}
+                      label={service.label}
+                      disabled={!+data?.[service.key]}
+                      onChange={(e: { target: { checked: boolean } }) => {
+                        setFieldValue(
+                          service.key,
+                          e.target.checked ? "1" : "0"
+                        );
+                      }}
+                    />
+                    {/* {service.icon} */}
+                  </div>
                 ) : null
               )}
             </div>

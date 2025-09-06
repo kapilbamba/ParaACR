@@ -91,7 +91,7 @@ const AgencyUserRegistration = () => {
           You have to submit these details by{" "}
           {data?.TentativeDate ? (
             <span className="text-sky-600">
-              {dayjs(data?.TentativeDate).endOf('day').format("MMM DD, YYYY hh:mm A")}
+              {dayjs(data?.TentativeDate).endOf('day').format("MMM DD, YYYY hh:mm:ss A")}
             </span>
           ) : null}
         </Typography>{" "}
@@ -344,7 +344,7 @@ const AgencyUserRegistration = () => {
               <Avatar
                 src={getImageUrl("profile", data?.Photo)}
                 alt="Orginization Logo"
-                className="!rounded-lg !w-[120px] !h-[120px]"
+                className="!rounded-lg !w-[120px] !h-[75px]"
               />
             </div>
           ) : null}
