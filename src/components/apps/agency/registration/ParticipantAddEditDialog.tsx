@@ -58,7 +58,7 @@ const ParticipantAddEditDialog: React.FC<IParticipantAddEditDialogProps> = (
     };
   };
   const [userTypeData] = useState({
-    Active: 0,
+    Active: 1,
     AgencyID: UserID,
     NewEntry: user?.FirstName ? 0 : 1,
     FirstName: user?.FirstName || "",
@@ -73,7 +73,7 @@ const ParticipantAddEditDialog: React.FC<IParticipantAddEditDialogProps> = (
     Address: user?.Address || "",
     Photo: user?.Photo || "",
     SupportDocuments: user?.SupportDocuments || "",
-    Venue: user?.Venue || "Patliputra Stadium",
+    Venue: user?.Venue || "Jawaharlal Nehru Stadium",
     Zone1: user?.Zone1 || "0",
     Zone2: user?.Zone2 || "0",
     Zone3: user?.Zone3 || "0",
@@ -81,23 +81,28 @@ const ParticipantAddEditDialog: React.FC<IParticipantAddEditDialogProps> = (
     Zone5: user?.Zone5 || "0",
     Zone6: user?.Zone6 || "0",
     IdenID: user?.IdenID || "0",
+    ADM: user?.ADM || "0",
+    Flight: user?.Flight || "0",
+    SEC: user?.SEC || "0",
+    TPT: user?.TPT || "0",
+    Catering: user?.Catering || "0",
 
   });
 
   const onUpdate = async (values: any, uploaddRes?: any) => {
     const { photoRes, supportDocumentsRes } = uploaddRes;
 
-    if (!(photoRes?.data?.FileName || values?.Photo)) {
-      return enqueueSnackbar('Profile Photo is not uploaded yet!', {
-        variant: "error",
-      });
-    }
+    // if (!(photoRes?.data?.FileName || values?.Photo)) {
+    //   return enqueueSnackbar('Profile Photo is not uploaded yet!', {
+    //     variant: "error",
+    //   });
+    // }
 
-    if (!(supportDocumentsRes?.data?.FileName || values?.SupportDocuments)) {
-      return enqueueSnackbar('Document/Identity ID is not uploaded yet!', {
-        variant: "error",
-      });
-    }
+    // if (!(supportDocumentsRes?.data?.FileName || values?.SupportDocuments)) {
+    //   return enqueueSnackbar('Document/Identity ID is not uploaded yet!', {
+    //     variant: "error",
+    //   });
+    // }
 
     let payload = {
       ...values,
@@ -132,17 +137,17 @@ const ParticipantAddEditDialog: React.FC<IParticipantAddEditDialogProps> = (
 
   const onAdd = async (values: any, uploaddRes?: any) => {
     const { photoRes, supportDocumentsRes } = uploaddRes;
-    if (!photoRes?.data?.FileName) {
-      return enqueueSnackbar('Profile Photo is not uploaded yet!', {
-        variant: "error",
-      });
-    }
+    // if (!photoRes?.data?.FileName) {
+    //   return enqueueSnackbar('Profile Photo is not uploaded yet!', {
+    //     variant: "error",
+    //   });
+    // }
 
-    if (!supportDocumentsRes?.data?.FileName) {
-      return enqueueSnackbar('Document/Identity ID is not uploaded yet!', {
-        variant: "error",
-      });
-    }
+    // if (!supportDocumentsRes?.data?.FileName) {
+    //   return enqueueSnackbar('Document/Identity ID is not uploaded yet!', {
+    //     variant: "error",
+    //   });
+    // }
     try {
       const data = await AgeusersAPI("post", {
         data: {

@@ -42,7 +42,7 @@ export const formInuputStep1 = (type?: string) => {
       type: "text",
       label: "Father's Name",
       name: "FatherName",
-      isRequired: true,
+      // isRequired: true,
       className: "col-span-2",
     },
 
@@ -79,7 +79,7 @@ export const formInuputStep1 = (type?: string) => {
       type: "autocomplete",
       label: "Identity ID",
       name: "IdenID",
-      isRequired: true,
+      // isRequired: true,
       className: "col-span-2",
     },
   ];

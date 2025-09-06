@@ -84,9 +84,6 @@ const AgencyUserRegistration = () => {
 
   if (isLoading) return <Spinner />;
 
-  console.log("dataaaaaaa", dayjs(data?.TentativeDate).format("MMM DD, YYYY"));
-
-
   return (
     <PageContainer title={data?.CompanyName || ""}>
       <div className="bg-white shadow-md rounded-lg flex items-center justify-between mt-5 py-5 px-5">
@@ -318,7 +315,7 @@ const AgencyUserRegistration = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-2">
+                {/* <div className="flex gap-2">
                   <MdOutlineStadium className="mt-1 text-gray-300" />
                   <div>
                     <Typography
@@ -338,7 +335,7 @@ const AgencyUserRegistration = () => {
                       Venues
                     </Typography>
                   </div>
-                </div>
+                </div> */}
               </li>
             </ul>
           </div>

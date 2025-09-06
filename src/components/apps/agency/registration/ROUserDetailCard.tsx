@@ -23,8 +23,6 @@ const ROUserDetailCard: React.FC<ROUserDetailCardProps> = (props) => {
   const theme: any = useTheme();
   const { open, close, data } = props;
 
-
-
   return (
     <Dialog open={open} maxWidth="md" fullWidth onClose={close}>
       <DialogContent>

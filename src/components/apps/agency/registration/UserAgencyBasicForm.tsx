@@ -313,7 +313,7 @@ export default function UserAgencyBasicForm(props: any) {
             }}
           >
             Profile
-            <span className="text-red-600 text-base">*</span>
+            {/* <span className="text-red-600 text-base">*</span> */}
 
           </Typography>
           <div className="grid grid-cols-1 gap-2 py-2">
@@ -356,7 +356,7 @@ export default function UserAgencyBasicForm(props: any) {
             }}
           >
             Document/Identity ID
-            <span className="text-red-600 text-base">*</span>
+            {/* <span className="text-red-600 text-base">*</span> */}
           </Typography>
           <div className="grid grid-cols-1 gap-2 py-2">
             {(image?.SupportDocuments?.name || values["SupportDocuments"]) &&

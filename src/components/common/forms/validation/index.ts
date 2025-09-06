@@ -19,11 +19,11 @@ export const agencyUserValidation = yup.object({
   DOB: yup.string().required(requiredText("Date of Birth")),
 
   Designation: yup.string().required(requiredText("Title/Position")),
-  FatherName: yup
-    .string()
-    .min(2, minText("Father's Name", 2))
-    .max(50, maxText("Father's Name", 50))
-    .required(requiredText("Father's Name")),
+  // FatherName: yup
+  //   .string()
+  //   .min(2, minText("Father's Name", 2))
+  //   .max(50, maxText("Father's Name", 50))
+  //   .required(requiredText("Father's Name")),
   Gender: yup
     .string()
     .oneOf(["Male", "Female"], "Invalid gender")
@@ -34,5 +34,6 @@ export const agencyUserValidation = yup.object({
     .required(requiredText("Email")),
   MobileNo: yup
     .string()
-    .required(requiredText("Mobile")),
+    .matches(/^\d{10}$/, "Mobile number must be exactly 10 digits")
+    .required("Mobile number is required"),
 });

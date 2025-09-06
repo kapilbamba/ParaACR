@@ -90,6 +90,7 @@ const AgencyUserList: React.FC<ITeamListProps> = (props) => {
     deleteBoxClose();
   };
 
+
   const columns = useMemo(
     () => [
       {
@@ -133,7 +134,7 @@ const AgencyUserList: React.FC<ITeamListProps> = (props) => {
       },
       {
         header: "Accreditation Number",
-        accessorKey: "ACRNo",
+        accessorKey: "ACRCardNo",
         size: 10,
         cell: (cell: any) => (
           <Typography fontSize={"small"} textAlign="center">
